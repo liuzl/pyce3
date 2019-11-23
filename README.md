@@ -2,7 +2,7 @@
 
 ## Introduction
 
-`pyce3` is python3 ggpackage for multilingual web page content extraction. It is used to extract the content of article type web pages, such as news, blog posts, etc.
+`pyce3` is a python3 package for multilingual web page content extraction. It is used to extract the content of article type web pages, such as news, blog posts, etc.
 
 ## Usage
 
