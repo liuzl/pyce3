@@ -7,9 +7,12 @@
 ## Usage
 
 ```python
+import pyce3
+import requests
+
 url = "http://caijing.chinadaily.com.cn/a/201911/21/WS5dd62455a31099ab995ed438.html"
 html = requests.get(url).content
-encoding, time, title, text, next_link = parse(url, html)
+encoding, time, title, text, next_link = pyce3.parse(url, html)
 print("编码："+encoding)
 print('='*10)
 print("标题："+title)
