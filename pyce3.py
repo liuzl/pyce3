@@ -230,7 +230,7 @@ def parse(url, html):
     return encoding, time, title, text, link
 
 if __name__ == "__main__":
-    url = "http://mil.sohu.com/20150504/n412317568.shtml"
+    url = "http://caijing.chinadaily.com.cn/a/201911/21/WS5dd62455a31099ab995ed438.html"
     import requests
     html = requests.get(url).content
     encoding, time, title, text, next_link = parse(url, html)
