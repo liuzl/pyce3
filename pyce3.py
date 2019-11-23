@@ -230,7 +230,12 @@ def parse(url, html):
     return encoding, time, title, text, link
 
 if __name__ == "__main__":
-    url = "http://caijing.chinadaily.com.cn/a/201911/21/WS5dd62455a31099ab995ed438.html"
+    #url = "http://caijing.chinadaily.com.cn/a/201911/21/WS5dd62455a31099ab995ed438.html"
+    import sys
+    if len(sys.argv) < 2:
+        print("Usage: %s <url>" % sys.argv[0])
+        sys.exit(1)
+    url = sys.argv[1]
     import requests
     html = requests.get(url).content
     encoding, time, title, text, next_link = parse(url, html)
