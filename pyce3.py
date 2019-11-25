@@ -1,6 +1,7 @@
 #coding=utf-8
 import re
 import chardet
+import requests
 import hashlib
 import dateutil.parser as dtparser
 import lxml
@@ -229,6 +230,10 @@ def parse(url, html):
     link = get_next_page_link(url, doc)
     return encoding, time, title, text, link
 
+def extract(url):
+    html = requests.get(url).content
+    return parse(url, html)
+
 if __name__ == "__main__":
     #url = "http://caijing.chinadaily.com.cn/a/201911/21/WS5dd62455a31099ab995ed438.html"
     import sys
@@ -236,9 +241,7 @@ if __name__ == "__main__":
         print("Usage: %s <url>" % sys.argv[0])
         sys.exit(1)
     url = sys.argv[1]
-    import requests
-    html = requests.get(url).content
-    encoding, time, title, text, next_link = parse(url, html)
+    encoding, time, title, text, next_link = extract(url)
     print("编码："+encoding)
     print('='*10)
     print("标题："+title)
