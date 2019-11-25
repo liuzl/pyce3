@@ -16,6 +16,7 @@ setuptools.setup(
     py_modules=['pyce3'],
     install_requires=[
         "chardet",
+        "requests",
         "python-dateutil",
         "lxml"
     ],
